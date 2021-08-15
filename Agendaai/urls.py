@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls), #Indica a rota de administração.
     path('', include('login.urls')), #Indica a rota home do app.
+    path('client/', include('client.urls')),
 ]

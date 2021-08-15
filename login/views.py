@@ -1,6 +1,5 @@
-#from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-def UserLogin(request):
-    return HttpResponse('Hello, World!')
+class UserLogin(TemplateView):
+    template_name = 'index.html'
 

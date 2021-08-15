@@ -1,8 +1,8 @@
 from django import urls
 from django.urls import path
-from django.urls.resolvers import URLPattern
+from django.urls import path
 from .views import UserLogin
 
 urlpatterns = [
-    path('', UserLogin, name='client_home'),
+    path('', UserLogin.as_view(), name='login'),
 ]
