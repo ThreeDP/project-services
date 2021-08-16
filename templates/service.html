@@ -1,0 +1,14 @@
+<!-- Trás as configurações do base.html para esse html-->
+{% extends 'base.html' %} 
+
+{% block content %} 
+<!-- Conteudo da página -->
+    <h1>Serviços</h1>
+    {% for service in services %}
+        <div>
+            <h3>{{ service.service_name }}</h3>
+            <h5>Empresa {{ service.business }}</h5>
+            <p><span>{{ service.service_time }}min.</span>  <span>{{ service.service_price }}</span>  <span>{{ service.service_category }}</span></p>
+        </div>
+    {% endfor %}
+{% endblock content %} 
