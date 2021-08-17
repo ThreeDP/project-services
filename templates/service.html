@@ -1,21 +1,26 @@
 <!-- Trás as configurações do base.html para esse html-->
 {% extends 'base.html' %}
 
-
 {% block content %} 
 <!-- Conteudo da página -->
-    <h1>Serviços</h1>
     <div class="services-list">
         {% for service in services %}
-            <div class="service-role">
-                <h3 class="service-title">{{ service.service_name }}</h3>
-                <h5 class="service-owner">Empresa {{ service.business }}</h5>
-                <div class="service-descript">
-                    <p class="service-time">{{ service.service_time }}min.</p>
-                    <p class="service-price">{{ service.service_price }}</p>
-                    <p class="service-category">{{ service.service_category }}</p>
+            <div class="card service-role three-quarter">
+                <img src="../static/img/mg.png" class="card-img-top" alt="...">          
+                <div class="card-body">
+                    <h5 class="card- text-capitalize text-primary">{{ service.service_name }}</h5>
+                    <div class="service-descript">
+                        <div>
+                            <p class="card-text bi bi-person-fill"> {{ service.business }}</p>
+                            <p class="card-text bi bi-clock-history"> {{ service.service_time }} min.</p>
+                        </div>
+                        <div style="margin-left: 15px;">
+                            <p class="card-text bi-currency-dollar"> {{ service.service_price }}</p>
+                            <p class="card-text bi bi-bookmark-check-fill"> {{ service.service_category }}</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-4">Detalhes</a>
                 </div>
-
             </div>
         {% endfor %}
     </div>
